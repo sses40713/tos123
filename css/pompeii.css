@@ -1,0 +1,129 @@
+body {
+    position: relative;
+}
+
+.reviewer-container.hide {
+    position: fixed;
+    opacity: 0;
+    top: 100%;
+}
+.reviewer-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .3s ease;
+    transition-property: transform,top,opacity;
+}
+.reviewr-mask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+#draw-machine {
+    position: relative;
+    width: 960px;
+    height: 100%;
+    margin: auto;
+    /* background: url('../images/draw_card.jpg'); */
+    background-size: cover;
+    background-position:center;
+
+    animation-name: SideBorder;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes SideBorder {
+    0% {
+        box-shadow: 0 0 20px 5px #444;
+    }
+    50% {
+        box-shadow: 0 0 20px 5px #AAA;
+    }
+    100% {
+        box-shadow: 0 0 20px 5px #444;
+    }
+}
+
+#draw-machine .background-mask {
+    position: absolute;
+    top: 0;
+    background: rgba(0,0,0,.6);
+    width: 100%;
+    height: 100%;
+}
+.monsters-container {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    color: #fff;
+    transition: .4s linear;
+    transition-property: opacity, visibility;
+}
+.monsters-container.hide {
+    visibility: hidden;
+    opacity: 0;
+}
+.monsters-container h1 {
+    margin: 1.5rem 0;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 5px #ffc107;
+}
+.monsters-container > div {
+    display: flex;
+}
+a.monster-link {
+    position: relative;
+    height: 80px;
+}
+a.monster-link.disable::before {
+    position: absolute;
+    top: 0;
+    background: #000;
+    opacity: .6;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
+
+.reviewer-switch-container {
+    position: fixed;
+    z-index: 1;
+    top: 30px;
+    right: 60px;
+    display: flex;
+    flex-flow: column;
+}
+button.reviewer-switch {
+    height: 100px;
+    width: 100px;
+    margin: 25px 0;
+    padding: 20px;
+    box-shadow: 0 0 10px 5px #c19756;
+    font-size: 25px;
+    color: #fff;
+    line-height: 25px;
+    background-color: #c19756;
+    border: none;
+    outline: none !important;
+    border-radius: 100px;
+    transition: .3s ease;
+}
+button.reviewer-switch:hover {
+    font-size: 30px;
+    line-height: 30px;
+    background-color: #a87d3e;
+    box-shadow: 0 0 20px 15px #a87d3e;
+    text-shadow: 0 0 5px #ffffff;
+}
+button.reviewer-switch:active {
+    font-size: 30px;
+    line-height: 30px;
+    background-color: #826130;
+    box-shadow: 0 0 20px 15px #826130;
+    text-shadow: 0 0 5px #ffffff;
+}
